@@ -1,0 +1,41 @@
+server:
+   port: 8081
+   address: localhost
+#mysql
+spring:
+   datasource:
+     url: jdbc:mysql://mysql.test.yiyaowang.com:3306/finance?useUnicode=true&amp;characterEncoding=gbk&allowMultiQueries=true&amp;autoReconnect=true&amp;noAccessToProcedureBodies=true
+     username: finance
+     password: d41d8cd98f00b204
+     driver-class-name: com.mysql.jdbc.Driver
+     #使用druid数据源
+     type: com.alibaba.druid.pool.DruidDataSource
+   ###FREEMARKER (FreeMarkerAutoConfiguration)
+   freemarker:
+     allow-request-override: false
+     cache: true
+     check-template-location: true
+     charset: UTF-8
+     content-type: text/html
+     expose-request-attributes: false
+     expose-session-attributes: false
+     expose-spring-macro-helpers: false
+     #settings:
+     #view-names:
+     #prefix:
+     suffix: .ftl
+     #request-context-attribute：
+     template-loader-path: classpath:/ftl/
+
+#mybatis
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.syz.springbootdemo.model
+
+#showSql
+logging:
+  level:
+    com:
+      syz:
+        springbootdemo:
+          dao: debug
