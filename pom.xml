@@ -15,6 +15,8 @@
 		<!-- jdk版本号，angel在这里使用1.8，大家修改为大家本地配置的jdk版本号即可 -->
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<module>springboot-api</module>
 
 	<!-- spring boot 父节点依赖, 引入这个之后相关的引入就不需要添加version配置， spring boot会自动选择最合适的版本进行添加。 -->
 	<parent>
@@ -60,6 +62,28 @@
 			<version>1.1.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<!--dubbo 依赖 -->
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>dubbo-spring-boot-starter</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<!--zookeeper依赖-->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.10</version>
+		</dependency>
 	</dependencies>
 
 	<build>

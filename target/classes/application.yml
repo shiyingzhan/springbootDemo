@@ -39,3 +39,16 @@ logging:
       syz:
         springbootdemo:
           dao: debug
+
+#注册中心的协议和地址
+dubbo:
+  application:
+    name:springboot-dubbo-test
+  registry:
+    protocol: zookper
+    address: 127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  monitor:
+    protocol: registry
